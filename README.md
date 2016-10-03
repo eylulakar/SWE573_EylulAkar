@@ -2,7 +2,7 @@
 ## Repository of the project "Stay Healthy", for SWE 573 - Software Development Practice.
 
 --------------------------------------------------------------------------------------
-The main goal of this health tracker project is to keep user motivated for eating healthily and help him/her achieve his/her goals.
+The main goal of this health tracker project is to help people eating and living healthily and keep them motivated for achieving their goals.
 
 Some of the features to be included: 
 

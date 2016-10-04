@@ -19,3 +19,7 @@ The project is going to be an online web application, which will be developed us
 <p>
 <a href="https://drive.google.com/open?id=1S2NTQTGnYChdtDR3dKe6bCiJvKNIAnhM51_QDTRCosw" target="_blank">Software Requirements Documentation</a></p>
 
+<p>
+<a href="https://drive.google.com/open?id=1P5Eo-6z4PIFjmfxgMrAabYAwgfRFImkIOp5quOeLEB8" target="_blank">Mockups Documentation</a>
+
+</p>

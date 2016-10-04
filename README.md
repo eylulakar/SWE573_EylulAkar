@@ -15,5 +15,7 @@ The project is going to be an online web application, which will be developed us
 
 --------------------------------------------------------------------------------------
 
-Requirements Documentation:
-https://drive.google.com/file/d/0B-WQaZ9lz7YBOTlmdE9GOEZ5U1U/view?usp=sharing
+<h2>Resources</h2> 
+<p>
+<a href="https://drive.google.com/file/d/0B-WQaZ9lz7YBOTlmdE9GOEZ5U1U/view?usp=sharing" target="_blank">Software Requirements Documentation</a></p>
+

@@ -23,3 +23,8 @@ The project is going to be an online web application, which will be developed us
 <a href="https://drive.google.com/open?id=1P5Eo-6z4PIFjmfxgMrAabYAwgfRFImkIOp5quOeLEB8" target="_blank">Mockups Documentation</a>
 
 </p>
+
+<p>
+<a href="https://github.com/eylulakar/SWE573_EylulAkar/edit/master/README.md#boards" target="_blank">Task Management</a>
+
+</p>

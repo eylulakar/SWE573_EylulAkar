@@ -5,8 +5,7 @@
 The main goal of this health tracker project is to help people eating and living healthily and keep them motivated for achieving their goals.
 
 Some of the features to be included: 
-
-- Setting goals about losing, gaining or maintaining weight
+- Record food and physical activities
 - Keeping log of daily nutrition and caloric intake
 - Keeping log of sports activities and calories burned 
 - BMI Calculation

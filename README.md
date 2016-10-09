@@ -16,7 +16,7 @@ The project is going to be an online web application, which will be developed us
 
 <h2>Resources</h2> 
 <p>
-<a href="https://drive.google.com/open?id=1S2NTQTGnYChdtDR3dKe6bCiJvKNIAnhM51_QDTRCosw" target="_blank">Software Requirements Documentation</a></p>
+<a style="text-decoration:underline;" href="https://drive.google.com/open?id=1S2NTQTGnYChdtDR3dKe6bCiJvKNIAnhM51_QDTRCosw" target="_blank">Software Requirements Documentation</a></p>
 
 <p>
 <a href="https://eylulakar.mybalsamiq.com/projects/stayhealthyapp/prototype/mainpage?key=b80036d39bab7a7119ff1e439121d12a9adbe4e2" target="_blank">Mockups Documentation</a>

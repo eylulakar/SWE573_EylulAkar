@@ -24,11 +24,11 @@ The project is going to be an online web application, which will be developed us
 </p>
 
 <p>
-<a style="text-decoration:underline;" href="https://drive.google.com/open?id=1S2NTQTGnYChdtDR3dKe6bCiJvKNIAnhM51_QDTRCosw" target="_blank">-> Software Requirements Documentation</a></p>
+<a style="text-decoration:underline;" href="https://drive.google.com/open?id=0B-WQaZ9lz7YBLXIwNkxJMnY2VlE" target="_blank">-> Software Requirements Documentation</a></p>
 
 
 <p>
-<a href="https://drive.google.com/open?id=1aY-T2AwJbXwAptIKM1OUI5e9DyhyQKZGig6lSzYdxV8" target="_blank">-> Technical Analysis Documentation</a> 
+<a href="https://drive.google.com/open?id=0B-WQaZ9lz7YBSkFiYXkxR19ZQVE" target="_blank">-> Software Design Documentation</a> 
 
 </p>
 

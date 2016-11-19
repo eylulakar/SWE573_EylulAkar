@@ -1,16 +1,18 @@
 $(document).ready(function() {
 	 
+	$('#DateOfBirth').datepicker();
+	
 					$("#btnLogin").click(function(e) {
 					 
 						$("#divLoginMessage").text("");
 						
-						var validationResult = validateLoginForm();
+						//var validationResult = validateLoginForm();
 						 
-						if(validationResult!="")
-							{
-								$('#divLoginMessage').html(validationResult);
-								return;
-							}
+						//if(validationResult!="")
+							//{
+							//	$('#divLoginMessage').html(validationResult);
+							//	return;
+							//}
 						
 						$.get("/StayHealthyApplication/LoginServlet?Email=" + $('#Email').val() + "&Password=" + $('#Password').val(),
 								function(responseText) {

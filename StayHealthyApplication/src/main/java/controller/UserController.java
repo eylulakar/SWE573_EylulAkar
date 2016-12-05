@@ -27,7 +27,7 @@ public class UserController {
 
 	@RequestMapping("/login")
 	public String person() {
-		return "login";
+		return "Login";
 	}
 
 	@RequestMapping(value = "/LoginProcess", method = RequestMethod.GET, consumes = "application/json", headers = "content-type=application/x-www-form-urlencoded")
@@ -78,7 +78,51 @@ public class UserController {
 		return myObj.toString();
 	}
 
-	
+	@RequestMapping(value = "/RegisterProcess", method = RequestMethod.GET, consumes = "application/json", headers = "content-type=application/x-www-form-urlencoded")
+	public @ResponseBody String RegisterProcess(HttpServletRequest request, HttpServletResponse response) {
+		boolean isSuccess = true;
+		String returnMessage = "";
+
+		dto.UserDto userDto = new dto.UserDto();
+
+		userDto.FullName = request.getParameter("formRegisterFullName");
+		userDto.Gender = Integer.parseInt(request.getParameter("formRegisterGender"));
+		userDto.Email = request.getParameter("formRegisterEmail");
+		userDto.Password = request.getParameter("formRegisterPassword");
+
+		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+
+		java.util.Date dateOfBirthDate = new java.util.Date();
+		try {
+			dateOfBirthDate = format.parse(request.getParameter("formRegisterDateOfBirth"));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		java.sql.Date dateOfBirth = new java.sql.Date(dateOfBirthDate.getTime());
+		userDto.DateOfBirth = dateOfBirth;
+
+		int resultId = UserService.InsertUser(userDto);
+
+		if (resultId > 0) {
+			returnMessage = "You successfully registered. Please login.";
+			isSuccess = true;
+		} else {
+			returnMessage = "Error occured during process. Please try again later.";
+			isSuccess = false;
+		}
+
+		Gson gson = new Gson();
+		JsonElement jsonReturnMessage = gson.toJsonTree(returnMessage);
+
+		JsonObject myObj = new JsonObject();
+
+		myObj.addProperty("success", isSuccess);
+		myObj.add("message", jsonReturnMessage);
+
+		return myObj.toString();
+	}
 
 	@ResponseBody
 	@RequestMapping("/GetLoggedInUserInfo")

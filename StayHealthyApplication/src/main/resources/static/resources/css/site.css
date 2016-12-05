@@ -2,7 +2,7 @@
 
 .button_sending {
 	background-image:
-		url('/StayHealthyApplication/resources/img/loading.gif') !important;
+		url('/resources/img/loading.gif') !important;
     background-size: 25px 25px;
 	background-repeat: no-repeat !important;
 	background-position: 5px 5px !important;	 
@@ -13,7 +13,7 @@
 
 .button_sending:hover {
 	background-image:
-		url('/StayHealthyApplication/resources/img/loading.gif') !important;
+		url('/resources/img/loading.gif') !important;
     background-size: 25px 25px;
 	background-repeat: no-repeat !important;
 	background-position: 3px 3px !important;

@@ -20,7 +20,7 @@ import org.springframework.http.MediaType;
 @Controller
 public class HomeController {
 	
-	@RequestMapping("/home")
+	@RequestMapping(value={"", "/", "home"})
 	public String Home() {	 
 		return "Home";
 	}

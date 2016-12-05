@@ -32,11 +32,11 @@ public class PersonController {
 		return "personview";
 	}
 
-	@ResponseBody
-	@RequestMapping("/")
-	String Entry() {
-		return "My spring boottttt app";
-	}
+	//@ResponseBody
+	//@RequestMapping("/")
+	//String Entry() {
+	//	return "My spring boottttt app";
+	//}
 
  
 

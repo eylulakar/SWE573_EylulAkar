@@ -201,3 +201,48 @@ function logout(){
 					window.location.href = "/login";												
 			});
 };
+
+
+function GetActivityList(){
+	$('#divActivityList').html("");
+	 
+	$.ajax({
+		 headers: { 
+		        'Accept': 'application/json',
+		        'Content-Type': 'application/json' 
+		    },
+		type : "GET",
+		url : "/GetActivityList",
+		data : [],
+		dataType : "json",
+
+		success : function(data, textStatus, jqXHR) {
+			console.log("data.success:" + data.success);
+			if (data.success) {
+				$('#divActivityList').html(data.list);	
+						
+			} else {
+				console.log("Error occured: data.message:" + data.message);
+				//$("#divRegisterMessage").html("<span class='errorMessage'>Error occured. Please try again later.</span>");				
+			}
+		},
+
+		error : function(jqXHR, textStatus, errorThrown) {
+			console.log("Error occured: textStatus:" + textStatus + " jqXHR.responseText:" + jqXHR.responseText );
+			$("#divMessage").html("<span class='errorMessage'>Error occured. Please try again later.</span>");
+		},
+
+		beforeSend : function(jqXHR, settings) {
+			$("#divLoading").removeClass("hide");
+			$("#divArticleActivity").addClass("hide");
+		},
+
+		complete : function(jqXHR, textStatus) {
+			$("#divLoading").addClass("hide");
+			$("#divArticleActivity").removeClass("hide");
+		}
+
+	});
+	
+}
+

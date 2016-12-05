@@ -34,4 +34,13 @@ Mysql is going to be used as Database Management System.
 
 
 
+--------------------------------------------------------------------------------------
+
+<h2>Notes</h2> 
+<p>
+<a href="https://github.com/eylulakar/SWE573_EylulAkar/wiki/Notes" target="_blank"> 
+ -> General descriptions about application</a> 
+</p>
+
+
 

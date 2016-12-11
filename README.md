@@ -31,6 +31,9 @@ Mysql is going to be used as Database Management System.
 <p>
 <a href="https://drive.google.com/open?id=0B-WQaZ9lz7YBSkFiYXkxR19ZQVE" target="_blank">-> Software Design Documentation</a> 
 </p>
+<p>
+<a href="https://drive.google.com/open?id=1mYQrsppz4Grz3CHKYHtrlgXigCzwJtyHG5nqi6u5zQY" target="_blank">-> Planning Documentation</a> 
+</p>
 
 
 

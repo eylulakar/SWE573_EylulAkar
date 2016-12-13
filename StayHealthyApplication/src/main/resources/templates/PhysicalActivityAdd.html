@@ -2,7 +2,7 @@
 <html xlmns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8" />
-<title>Add Food Activity | Stay Healthy</title>
+<title>Add Physical Activity | Stay Healthy</title>
 <meta name="keywords" content="HTML5 Template" />
 <meta name="description"
 	content="Progressive — Responsive Multipurpose HTML Template" />
@@ -28,6 +28,7 @@
 <link rel="stylesheet" href="resources/css/animate.css" />
 <link rel="stylesheet" href="resources/css/video-js.min.css" />
 <link rel="stylesheet" href="resources/css/morris.css" />
+<link rel="stylesheet" href="resources/css/royalslider/royalslider.css" />
 <link rel="stylesheet"
 	href="resources/css/royalslider/skins/minimal-white/rs-minimal-white.css" />
 <link rel="stylesheet"
@@ -127,9 +128,8 @@
 												<ul class="nav navbar-nav navbar-center">
 													<li class="parent"><a href="#">Food Activity</a>
 														<ul class="sub">
-															<li><a href="/food-add">Add Food Activity</a></li>
+														<li><a href="/food-add">Add Food Activity</a></li>
 															<li><a href="/my-food-activities">My Food Activities</a></li>
-														
 														</ul></li>
 													<li class="parent"><a href="#">Physical Activity</a>
 														<ul class="sub">
@@ -167,7 +167,7 @@
 				<div class="container">
 					<ul class="breadcrumb">
 						<li><a href="/home">Home</a></li>
-						<li class="active">Add Food Activity </li>
+						<li class="active">Add Physical Activity</li>
 					</ul>
 				</div>
 			</div>
@@ -176,69 +176,57 @@
 			<section id="main" class="login-register">
 				<header class="page-header">
 					<div class="container">
-						<h1 class="title">Add Food Activity </h1>
+						<h1 class="title">Add Physical Activity</h1>
 					</div>
 				</header>
 				<div class="container">
 					<div class="row">
 						<div class="content col-sm-9 col-md-9">
 						
-							<form class="form-horizontal" role="form" id="formFoodAdd">
+							<form class="form-horizontal" role="form" id="formActivityAdd">
 								<div class="form-group">
-								  <label for="inputSearchFood" class="col-sm-2 control-label">Food:</label>
+								  <label for="inputSearchActivity" class="col-sm-2 control-label">Activity:</label>
 								  <div class="col-sm-10">
-									<input type="text" class="form-control" id="inputSearchFood" name="inputSearchFood" placeholder="Type Food" />
-									<input type="text" name="inputSelectedFoodNdbno" id="inputSelectedFoodNdbno" style="border:2px solid red !important;" class="hide"/>
+									<input type="text" class="form-control" id="inputSearchActivity" name="inputSearchActivity" placeholder="Type Activity" />
+									<input type="text" name="inputSelectedActivityId" id="inputSelectedActivityId" style="border:2px solid red !important;" class="hide"/>
 								  </div>
-								 
-								  <div class="col-sm-10"> 
-								  <div id="divSelectedFoodDetails"></div>
-								   		</div> 
-								   		
 								</div>
 								<div class="form-group">
-								  <label for="selectMeasuresList" class="col-sm-2 control-label">Measure:</label>
-									 <div class="col-sm-10">										
-									 	<select id="selectMeasuresList" class="selectBox" style="width:80% !important; margin-bottom: 0px;" name="selectMeasuresList">											
-										</select>
-										<div id="divLoadingMeasureLabel" class="hide">
+								  <label for="inputActivityDuration" class="col-sm-2 control-label">Duration:</label>
+								  <div class="col-sm-10">
+									<input type="text" class="form-control" id="inputActivityDuration"  name="inputActivityDuration" placeholder="Duration (minutes)" style="width:200px;display:inline-block;"/>
+									  <span style="font-weight:bold;padding-left:5px;padding-right:10px;">
+									  Total Calories:</span><input type="text" class="form-control" id="inputTotalCalories" name="inputTotalCalories" placeholder="Total Calories" style="width:130px;display:inline-block !important;" />
+									  <div id="divLoadingTotalCalories" class="hide">
 																<img src="/resources/img/loading_big.gif"
 																	style="display: block; margin: auto;" width="40px" />
-										</div>	
-									</div>			
-									  <input type="text" id="inputMeasureLabel" name="inputMeasureLabel" style="width:100px;display:none;"/>
-												 		  
+										</div>			
+								  </div>
 								</div>
-								<div class="form-group">
-									 <label for="inputAmount" class="col-sm-2 control-label">Amount:</label>
-										 <div class="col-sm-10">	
-										  <input type="text" class="form-control" id="inputAmount" name="inputAmount" placeholder="Amount" style="width:100px;display:inline-block !important;"/>
-										  <span style="font-weight:bold;padding-left:5px;padding-right:10px;">Total Calories:</span><input type="text" class="form-control" id="inputTotalCalories" name="inputTotalCalories" placeholder="Total Calories" style="width:130px;display:inline-block !important;" disabled="disabled" />
-										 </div>
-								</div>
-								<div class="form-group">
-								  <label for="inputFoodActivityDate" class="col-sm-2 control-label">Consumed Date:</label>
+									<div class="form-group">
+								  <label for="inputActivityDate" class="col-sm-2 control-label">Performed Date:</label>
 								  <div class="col-sm-10">
-									<input type="text" class="form-control" id="inputFoodActivityDate"  name="inputFoodActivityDate" placeholder="Date" style="width:200px;"/>		
+									<input type="text" class="form-control" id="inputActivityDate"  name="inputActivityDate" placeholder="Date" style="width:200px;"/>		
 								  </div>
 								</div>
 								<div class="form-group">
-								  <label for="inputFoodActivityNotes" class="col-sm-2 control-label">Notes:</label>
+								  <label for="inputActivityNotes" class="col-sm-2 control-label">Notes:</label>
 								  <div class="col-sm-10">
-									<textarea class="form-control" rows="3" id="inputFoodActivityNotes" name="inputFoodActivityNotes" placeholder="My notes about this food activity"></textarea>	
+									<textarea class="form-control" rows="3" id="inputActivityNotes" name="inputActivityNotes" placeholder="My notes about this activity"></textarea>	
 								  </div>
 								</div>
-								<div class="form-group">
+		
+									<div class="form-group">
 											<div class="col-sm-offset-2 col-sm-10">
 												<table>
 													<tr>
 														<td>
 															<button type="submit" class="btn btn-default"
-																id="btnFoodAdd">Add</button>
-																<button type="button" class="btn btn-default"
+																id="btnActivityAdd">Add</button>
+															<button type="button" class="btn btn-default"
 																id="btnClear">Clear</button>
 														</td>
-														<td><div id="divLoadingFoodAdd" class="hide">
+														<td><div id="divLoadingActivityAdd" class="hide">
 																<img src="/resources/img/loading_big.gif"
 																	style="display: block; margin: auto;" width="40px" />
 															</div></td>
@@ -252,11 +240,10 @@
 		
 											</div>
 										</div>
-							</form>							
+					</form>							
 		 
-							
 						<div id="divList" style="padding-top: 20px;">
-		    			 <h3 style="font-weight:bold;font-size:20px;">Recent Food Activities</h3>
+		    			 <h3 style="font-weight:bold;font-size:20px;">Recent Activities</h3>
 		 					<div id="divLoading" class="loading-content">
 								<img src="/resources/img/loading_big.gif"
 									style="display: block; margin: auto;" width="75px" />
@@ -273,23 +260,23 @@
 
 							<!-- .content -->
 						</div>
- 										
-						<div id="sidebar" class="sidebar col-sm-3 col-md-3">
-										<aside class="widget menu">										
-										  <nav>
-											<ul>
-											 <li style="background-color:#cfdade;">
-												<a href="/food-add"><i class="fa fa-cutlery item-icon"></i>Add Food Activity</a>
-											  </li>
-											 <li>
-												<a href="/my-food-activities"><i class="fa fa-glass item-icon"></i>My Food Activities</a>
-											  </li>																				 
-											</ul>
-										  </nav>
-										</aside><!-- .menu-->
-						 </div>
-
-
+ 										<div id="sidebar" class="sidebar col-sm-3 col-md-3">
+											<aside class="widget menu">										
+											  <nav>
+												<ul>
+												  <li style="background-color:#cfdade;">
+													<a href="/physical-activity-add"><i class="fa fa-heart item-icon"></i>Add Physical Activity</a>
+												  </li>
+												  <li>
+													<a href="/my-physical-activities"><i class="fa fa-heart-o item-icon"></i>My Physical Activities</a>
+												  </li>
+												  <li>
+													<a href="/physical-activity-list"><i class="fa fa-list-ul item-icon"></i>Physical Activity List</a>
+												  </li>											 
+												</ul>
+											  </nav>
+											</aside><!-- .menu-->
+										  </div>
 					</div>
 				</div>
 				<!-- .container -->
@@ -397,7 +384,9 @@
 	<script src="resources/js/jquery.fancybox.pack.js"></script>
 	<script src="resources/js/isotope.pkgd.min.js"></script>
 	<script src="resources/js/jquery.knob.js"></script>
-<!-- 	<script src="resources/js/jquery.selectBox.min.js"></script> -->
+	<script src="resources/js/jquery.selectBox.min.js"></script>
+	<script src="resources/js/jquery.royalslider.min.js"></script>
+	<script src="resources/js/jquery.tubular.1.0.js"></script>
 	<script src="resources/js/SmoothScroll.js"></script>
 	<script src="resources/js/country.js"></script>
 	<script src="resources/js/spin.min.js"></script>
@@ -423,20 +412,20 @@
 		   
 		   getUserInfo();
 
-		   $("#inputFoodActivityDate").datepicker({ dateFormat: 'dd-mm-yy' })
+		   $("#inputActivityDate").datepicker({ dateFormat: 'dd-mm-yy' })
 		  						.datepicker("setDate", new Date());
 		   
-	        $("#inputSearchFood").autocomplete({
+	        $("#inputSearchActivity").autocomplete({
 	            source: function (request, response) {
 	                $.ajax({
-	                    url: "/GetFoodSearchResultList",
+	                    url: "/GetPhysicalActivityListJson",
 	                    type: "GET",
 	                    dataType: "json",
 	                    data: { Prefix: request.term },
 	                    success: function (data) {
 	                    	console.log(data);
 	                        response($.map(data.list, function (item) {
-	                            return { label: item.name, value: item.ndbno };
+	                            return { label: item.SpecificActivities, value: item.Id };
 	                        }))
 
 	                    }
@@ -444,12 +433,10 @@
 	            },	            
                 select: function (event, ui) {
                 	 event.preventDefault();                	
-                	 $("#inputSearchFood").val(ui.item.label);
-                	 $("#inputSelectedFoodNdbno").val(ui.item.value);      
+                	 $("#inputSearchActivity").val(ui.item.label);
+                	 $("#inputSelectedActivityId").val(ui.item.value);
                 	 
-                	 $("#inputTotalCalories").val(0);
-                	 
-                	 GetSelectedFoodDetailsByNdbno(ui.item.value);        
+                	 CalculateTotalCalories();               
                 },
 	            messages: {
 	                noResults: '',
@@ -457,148 +444,113 @@
 	            }
 	        });
 	        
-	        //============CalculateTotalCalories===============
-	        $("#inputAmount").on('keyup change', function (){
-	        	CalculateTotalCalories();	        	
-	        });      
 	        
-	        $('#selectMeasuresList').on('change', function() {
-	        	CalculateTotalCalories();	        	
-	        })
 	        //============CalculateTotalCalories===============
-	        
+	        $("#inputActivityDuration").on('keyup change', function (){
+	        	CalculateTotalCalories();	        	
+	        });     
+	    
+	        //============CalculateTotalCalories===============
 	    })
 	    
-	   
-		function CalculateTotalCalories() {
-		   $("#inputTotalCalories").val(0);
+	    
+	    function CalculateTotalCalories() {
 		   
-			var measureValue = parseFloat($("#selectMeasuresList").val());
-			var amount = parseFloat($("#inputAmount").val());
-
-			var totalCalories = measureValue * amount;
-
-			console.log("measure val: " + measureValue);
-			console.log("amount: " + amount);
-			console.log("totalCalories: " + totalCalories);
+		   if($("#inputActivityDuration").val() == ""){
+				return;	
+			}		   
+		   
+			$("#inputTotalCalories").val("");	
 			
-			if(!isNaN(totalCalories))
-				{
-					$("#inputTotalCalories").val(totalCalories);
+			
+		   var selectedActivityId = $("#inputSelectedActivityId").val();
+		   var duration = $("#inputActivityDuration").val();
+		   
+		   $.ajax({
+				url : "/CalculateTotalCalories",
+				type : "GET",
+				data : {selectedActivityId : selectedActivityId, duration : duration},
+				dataType : "json",
+				success : function(responseData, textStatus, jqXHR) {
+					
+						$("#inputTotalCalories").val(responseData.totalCalories);		
+
+				},
+				error : function(jqXHR, textStatus, errorThrown) {
+					console.log("Error occured: textStatus:"
+							+ textStatus + " jqXHR.responseText:"
+							+ jqXHR.responseText);
+				},
+
+				beforeSend : function(jqXHR, settings) {
+					$("#divLoadingTotalCalories").removeClass("hide");
+					$("#divLoadingTotalCalories").addClass("showInline");
+				},
+				complete : function(jqXHR, textStatus) {
+					$("#divLoadingTotalCalories").removeClass("showInline");
+					$("#divLoadingTotalCalories").addClass("hide");
 				}
+			})
 
+			
 		}
-
-		function GetSelectedFoodDetailsByNdbno(ndbno) {
-				$.ajax({
-						url : "/GetFoodDetailsByNdbno",
-						type : "GET",
-						data : {
-							ndbno : ndbno
-						},
-						dataType : "json",
-						success : function(responseData, textStatus, jqXHR) {
-							$('#inputAmount').val("");
-
-							//get energy related nutrient entity
-							var foodMeasures = responseData.energyNutrientsEntity.measures;
-
-							console.log("response data: " + responseData);
-							console.log("foodDetails: "
-									+ responseData.foodDetails);
-							console.log("nutrients:"
-									+ responseData.foodDetails.nutrients);
-							console.log("food measures:" + foodMeasures);
-
-							$("#divSelectedFoodDetails").html(
-									"aaaaaaaaaaaaaaaa");
-
-							$("#selectMeasuresList").empty();
-
-							var measuresSelectHtml = "";
-
-							var measuresList = [];
-							$.each(foodMeasures, function(index, measure) {
-								console.log("measure: "+ measure.label + " - "+ measure.value);
-								measuresSelectHtml += '<option value="'+ measure.value +'">'+ measure.label+ '</option>';
-							});
-
-							$('#selectMeasuresList').append(measuresSelectHtml);
-
-							$('#inputMeasureLabel').val(
-									$('#selectMeasuresList option:selected')
-											.text());
-
-						},
-						error : function(jqXHR, textStatus, errorThrown) {
-							console.log("Error occured: textStatus:"
-									+ textStatus + " jqXHR.responseText:"
-									+ jqXHR.responseText);
-						},
-
-						beforeSend : function(jqXHR, settings) {
-							$("#divLoadingMeasureLabel").removeClass("hide");
-							$("#divLoadingMeasureLabel").addClass("showInline");
-						},
-						complete : function(jqXHR, textStatus) {
-							$("#divLoadingMeasureLabel").removeClass(
-									"showInline");
-							$("#divLoadingMeasureLabel").addClass("hide");
-						}
-					})
-
-		}
-
-		GetRecentFoodActivityList();
-
-		$("#btnClear").click(function(event) {
+	    
+	    
+	    GetRecentActivityList();
+	    
+	    $("#btnClear").click(function(event) {
 			event.preventDefault();
 
 			$("#divSuccessMessage").html("");
 			$("#divErrorMessage").html("");
 		
-			$("#divLoadingFoodAdd").removeClass("show");
-			$("#divLoadingFoodAdd").addClass("hide");
+			$("#divLoadingActivityAdd").removeClass("show");
+			$("#divLoadingActivityAdd").addClass("hide");
 			
-			$("#inputSearchFood").val("");
-			$("#inputSelectedFoodNdbno").val("");
-			$("#inputMeasureLabel").val("");	
-			$("#inputFoodActivityNotes").val("");	
-			$("#inputAmount").val("");	
-			$("#selectMeasuresList").val("");
-			$("#selectMeasuresList").empty();		
+			$("#inputSearchActivity").val("");
+			$("#inputActivityNotes").val("");	
+			$("#inputActivityDuration").val("");			
 			$("#inputTotalCalories").val("");
 			 
-			  $("#inputFoodActivityDate").datepicker({ dateFormat: 'dd-mm-yy' })
+			  $("#inputActivityDate").datepicker({ dateFormat: 'dd-mm-yy' })
 				.datepicker("setDate", new Date());
 		});
-		
-		$("#btnFoodAdd").click(function(event) {
+	    
+	    
+	    
+		$("#btnActivityAdd").click(function(event) {
 
-					$("#divSuccessMessage").html("");
-					$("#divErrorMessage").html("");
+			$("#divSuccessMessage").html("");
+			$("#divErrorMessage").html("");
+			
+			event.preventDefault();
+			
+			var $form = $("#formActivityAdd");	
+			var postData = $form.serialize();
+			var url = "/PhysicalActivityAdd";
+			
+			 $.ajax({
+					headers: { 
+				        'Accept': 'application/json',
+				        'Content-Type': 'application/json' 
+				    },			
+		            type: "GET",
+		            url: url,
+		            data: postData,
+		            contentType: "json",
+		            success: function(responseData, textStatus, jqXHR) {
+		            	console.log("dataaa:" + responseData);	
+		            	
+		  
+					if (responseData.success == true) {
+								$("#divSuccessMessage").html(responseData.message);
+								$("#divErrorMessage").html("");
+							} else {
+								$("#divSuccessMessage").html("");
+								$("#divErrorMessage").html(responseData.message);
+							}
 
-					event.preventDefault();
-
-					var $form = $("#formFoodAdd");
-					var postData = $form.serialize();
-					var url = "/FoodActivityAdd";
-
-					$.ajax({
-						headers : {
-							'Accept' : 'application/json',
-							'Content-Type' : 'application/json'
-						},
-						type : "GET",
-						url : url,
-						data : postData,
-						contentType : "json",
-						success : function(responseData, textStatus, jqXHR) {
-							console.log("dataaa:" + responseData);
-							$("#divSuccessMessage").html(responseData.message); 
-							$("#divErrorMessage").html("");
-
-							GetRecentFoodActivityList();
+							GetRecentActivityList();
 						},
 						error : function(jqXHR, textStatus, errorThrown) {
 							console.log("Error occured: textStatus:"
@@ -610,19 +562,19 @@
 						},
 
 						beforeSend : function(jqXHR, settings) {
-							$("#divLoadingFoodAdd").removeClass("hide");
-							$("#divLoadingFoodAdd").addClass("show");
+							$("#divLoadingActivityAdd").removeClass("hide");
+							$("#divLoadingActivityAdd").addClass("show");
 						},
 
 						complete : function(jqXHR, textStatus) {
-							$("#divLoadingFoodAdd").removeClass("show");
-							$("#divLoadingFoodAdd").addClass("hide");
+							$("#divLoadingActivityAdd").removeClass("show");
+							$("#divLoadingActivityAdd").addClass("hide");
 
 						}
 					})
 				});
 
-		function GetRecentFoodActivityList() {
+		function GetRecentActivityList() {
 			$('#divRecentActivityList').html("");
 			$('#divMessage').html("");
 
@@ -632,7 +584,7 @@
 					'Content-Type' : 'application/json'
 				},
 				type : "GET",
-				url : "/GetRecentFoodActivityList",
+				url : "/GetRecentPhysicalActivityList",
 				data : [],
 				dataType : "json",
 

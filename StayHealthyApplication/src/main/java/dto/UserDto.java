@@ -3,7 +3,7 @@ package dto;
 import java.sql.Date;
 
 public class UserDto {
-	
+
 	public int Id;
 	public String Email;
 	public String FullName;
@@ -13,4 +13,8 @@ public class UserDto {
 	public Integer Weight;
 	public Integer Height;
 	public String Notes;
+	public double Bmi;
+
+	public String DateOfBirthText;
+
 }

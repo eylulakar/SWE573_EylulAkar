@@ -1,6 +1,10 @@
 # SWE573_EylulAkar
 ## Repository of the project "Stay Healthy", for SWE 573 - Software Development Practice.
 
+<p>
+<b>Deployment Address: <a href="http://sample-env.dxypipqqti.us-west-2.elasticbeanstalk.com/login" target="_blank">Stay Healthy Web Application</a></b> 
+</p>
+
 --------------------------------------------------------------------------------------
 The main goal of this health tracker project is to help people eating and living healthily and keep them motivated for achieving their goals.
 

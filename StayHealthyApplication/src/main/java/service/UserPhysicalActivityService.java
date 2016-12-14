@@ -1,10 +1,12 @@
 package service;
 
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import business.GeneralFunctions;
 import data.DatabaseFunctions;
 
 public class UserPhysicalActivityService {
@@ -53,7 +55,8 @@ public class UserPhysicalActivityService {
 				dto.CreateDateText = rs.getString("CreateDate");
 				dto.ActivityMajorHeading = rs.getString("MajorHeading");
 				dto.ActivitySpecificActivities = rs.getString("SpecificActivities");
-
+				dto.TotalCalories = rs.getDouble("TotalCalories");
+				
 				list.add(dto);
 			}
 
@@ -66,6 +69,38 @@ public class UserPhysicalActivityService {
 
 		return list;
 	}
+	
+	public static List<dto.UserPhysicalActivityDto> GetAllPhysicalActivityListOfUser(int UserId, Date startDate, Date endDate) {
+
+		List<dto.UserPhysicalActivityDto> list = new ArrayList<dto.UserPhysicalActivityDto>();
+
+		try {
+			ResultSet rs = DatabaseFunctions.GetAllPhysicalActivityListOfUser(UserId, startDate, endDate);
+
+			while (rs.next()) {
+				dto.UserPhysicalActivityDto dto = new dto.UserPhysicalActivityDto();
+				dto.Id = Integer.parseInt(rs.getString("Id"));
+				dto.Duration = Integer.parseInt(rs.getString("Duration"));
+				dto.Notes = rs.getString("Notes");
+				dto.PerformedDateText = rs.getString("PerformedDate");
+				dto.CreateDateText = rs.getString("CreateDate");
+				dto.ActivityMajorHeading = rs.getString("MajorHeading");
+				dto.ActivitySpecificActivities = rs.getString("SpecificActivities");
+				dto.TotalCalories = rs.getDouble("TotalCalories");
+				
+				list.add(dto);
+			}
+
+		} catch (ClassNotFoundException e) {
+			String exc = e.toString();
+
+		} catch (SQLException e) {
+			String exc = e.toString();
+		}
+
+		return list;
+	}
+	
 	 
 	public static Integer InsertUserPhysicalActivity(dto.UserPhysicalActivityDto userPhysicalActivityDto) {
 
@@ -80,7 +115,22 @@ public class UserPhysicalActivityService {
 		}
 
 		return result;
-
 	}
+	
+	public static Integer DeleteUserPhysicalActivity(int Id) {
+
+		Integer result;
+
+		try {
+			result = DatabaseFunctions.DeleteUserPhysicalActivity(Id);
+		} catch (ClassNotFoundException e) {
+			result = -1;
+		} catch (SQLException e) {
+			result = -1;
+		}
+
+		return result;
+	}
+	 
 
 }

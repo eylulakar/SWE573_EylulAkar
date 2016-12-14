@@ -184,19 +184,42 @@
 						<div class="content col-sm-9 col-md-9">
 						
 							<form class="form-horizontal" role="form" id="formFoodAdd">
-								<div class="form-group">
+								<div class="form-group" style="margin-bottom: 0px;">
 								  <label for="inputSearchFood" class="col-sm-2 control-label">Food:</label>
 								  <div class="col-sm-10">
 									<input type="text" class="form-control" id="inputSearchFood" name="inputSearchFood" placeholder="Type Food" />
 									<input type="text" name="inputSelectedFoodNdbno" id="inputSelectedFoodNdbno" style="border:2px solid red !important;" class="hide"/>
 								  </div>
 								 
-								  <div class="col-sm-10"> 
-								  <div id="divSelectedFoodDetails"></div>
-								   		</div> 
+								  <div id="divSelectedFoodDetails" style="margin-top: 55px;" class="hide">	
+										<div class="panel-group" id="accordion5">
+										 <div class="panel panel-info">
+												<div class="panel-heading">
+												  <div class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion5" href="#collapse53">
+													Nutritional Values
+													</a>
+												  </div>
+												</div>
+												<div id="collapse53" class="panel-collapse collapse">
+												  <div class="panel-body">
+													 <div id="divSelectedFoodDetailsContentLoading" class="hide">
+																<img src="/resources/img/loading_big.gif"
+																	style="display: block; margin: auto;" width="40px" />													
+											
+												  	</div>
+												  	<div id="divSelectedFoodDetailsContent">
+													</div>
+												</div>
+										 	 </div>	
+										</div> 	
+										 </div> 
 								   		
+									</div>
+								
 								</div>
-								<div class="form-group">
+								
+								<div class="form-group" style="margin-top: 20px;">
 								  <label for="selectMeasuresList" class="col-sm-2 control-label">Measure:</label>
 									 <div class="col-sm-10">										
 									 	<select id="selectMeasuresList" class="selectBox" style="width:80% !important; margin-bottom: 0px;" name="selectMeasuresList">											
@@ -252,11 +275,17 @@
 		
 											</div>
 										</div>
+										
 							</form>							
 		 
 							
 						<div id="divList" style="padding-top: 20px;">
 		    			 <h3 style="font-weight:bold;font-size:20px;">Recent Food Activities</h3>
+		    			 <div id="divActivityDeleteMessage" class="successMessage" style="padding:10px;"></div>
+							<div id="divLoadingActivityDelete" class="loading-content" style="height:100px !important;display:none;">
+								<img src="/resources/img/loading_big.gif"
+									style="display: block; margin: auto;" width="75px" />
+							</div>	
 		 					<div id="divLoading" class="loading-content">
 								<img src="/resources/img/loading_big.gif"
 									style="display: block; margin: auto;" width="75px" />
@@ -490,6 +519,8 @@
 		}
 
 		function GetSelectedFoodDetailsByNdbno(ndbno) {
+			$("#divSelectedFoodDetailsContent").html("");
+			
 				$.ajax({
 						url : "/GetFoodDetailsByNdbno",
 						type : "GET",
@@ -510,8 +541,9 @@
 									+ responseData.foodDetails.nutrients);
 							console.log("food measures:" + foodMeasures);
 
-							$("#divSelectedFoodDetails").html(
-									"aaaaaaaaaaaaaaaa");
+							console.log("responseData.nutritionalValuesHtml: "+ responseData.nutritionalValuesHtml);
+																											
+							$("#divSelectedFoodDetailsContent").html(responseData.nutritionalValuesHtml);
 
 							$("#selectMeasuresList").empty();
 
@@ -537,10 +569,23 @@
 						},
 
 						beforeSend : function(jqXHR, settings) {
+							
+							$("#divSelectedFoodDetailsContentLoading").removeClass("hide");
+							$("#divSelectedFoodDetailsContentLoading").addClass("show");
+							
+							$("#divSelectedFoodDetails").addClass("hide");
+							$("#divSelectedFoodDetails").removeClass("show");
+							
 							$("#divLoadingMeasureLabel").removeClass("hide");
 							$("#divLoadingMeasureLabel").addClass("showInline");
 						},
 						complete : function(jqXHR, textStatus) {
+							$("#divSelectedFoodDetailsContentLoading").addClass("hide");
+							$("#divSelectedFoodDetailsContentLoading").removeClass("show");
+							
+							$("#divSelectedFoodDetails").removeClass("hide");
+							$("#divSelectedFoodDetails").addClass("show");
+							
 							$("#divLoadingMeasureLabel").removeClass(
 									"showInline");
 							$("#divLoadingMeasureLabel").addClass("hide");
@@ -568,7 +613,13 @@
 			$("#selectMeasuresList").val("");
 			$("#selectMeasuresList").empty();		
 			$("#inputTotalCalories").val("");
-			 
+			$('#divActivityDeleteMessage').html("");
+			
+			$("#divSelectedFoodDetails").addClass("hide");
+			$("#divSelectedFoodDetails").removeClass("show");
+			
+			$("#divSelectedFoodDetailsContent").html("");
+			
 			  $("#inputFoodActivityDate").datepicker({ dateFormat: 'dd-mm-yy' })
 				.datepicker("setDate", new Date());
 		});
@@ -577,6 +628,8 @@
 
 					$("#divSuccessMessage").html("");
 					$("#divErrorMessage").html("");
+					
+					$('#divActivityDeleteMessage').html("");
 
 					event.preventDefault();
 
@@ -673,6 +726,60 @@
 			});
 
 		}
+		
+		
+
+		function DeleteUserFoodActivity(id){		
+			 
+			$('#divActivityList').html("");
+			 
+			$('#divActivityDeleteMessage').html("");		 			
+			
+			$.ajax({
+				 headers: { 
+				        'Accept': 'application/json',
+				        'Content-Type': 'application/json' 
+				    },
+				type : "GET",
+				url : "/DeleteUserFoodActivity?userFoodActivityId=" + id,
+				data : [],
+				dataType : "json",
+
+				success : function(data, textStatus, jqXHR) {
+					console.log("data.success:" + data.success);
+					if (data.success) {
+						$('#divActivityDeleteMessage').html(data.message);	
+						
+						GetRecentFoodActivityList();
+								
+					} else {
+						$('#divActivityDeleteMessage').html(data.message);	
+						
+						console.log("Error occured: data.message:" + data.message);
+						//$("#divRegisterMessage").html("<span class='errorMessage'>Error occured. Please try again later.</span>");				
+					}
+				},
+
+				error : function(jqXHR, textStatus, errorThrown) {
+					console.log("Error occured: textStatus:" + textStatus + " jqXHR.responseText:" + jqXHR.responseText );
+				
+					$('#divActivityDeleteMessage').html("Error occured. Please try again later");
+				},
+
+				beforeSend : function(jqXHR, settings) {
+					$("#divLoadingActivityDelete").removeClass("hide");
+					$("#divLoadingActivityDelete").addClass("show");						
+				},
+
+				complete : function(jqXHR, textStatus) {
+					$("#divLoadingActivityDelete").addClass("hide");
+					$("#divLoadingActivityDelete").removeClass("show");
+				}
+
+			});
+			
+		}		
+		
 	</script>
 </body>
 </html>

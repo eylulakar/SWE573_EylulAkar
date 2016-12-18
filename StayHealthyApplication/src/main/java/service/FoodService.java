@@ -74,34 +74,5 @@ public class FoodService {
 		return foodResponse;
 	}
 
-	public static Integer InsertFood(dto.FoodDto foodDto) {
 
-		Integer result;
-
-		try {
-			result = FoodDatabaseFunctions.InsertFood(foodDto);
-		} catch (ClassNotFoundException e) {
-			result = -1;
-		} catch (SQLException e) {
-			result = -1;
-		}
-
-		return result;
-	}
-
-	public static Integer InsertUserFoodActivity(dto.UserFoodActivityDto userFoodActivityDto) {
-
-		Integer result;
-
-		try {
-			result = FoodDatabaseFunctions.InsertUserFoodActivity(userFoodActivityDto);
-		} catch (ClassNotFoundException e) {
-			result = -1;
-		} catch (SQLException e) {
-			result = -1;
-		}
-
-		return result;
-
-	}
 }

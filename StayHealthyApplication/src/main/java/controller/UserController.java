@@ -18,6 +18,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import business.GeneralFunctions;
 import model.Person;
 import model.UserModel;
 import service.UserPhysicalActivityService;
@@ -105,6 +106,14 @@ public class UserController {
 
 		java.sql.Date dateOfBirth = new java.sql.Date(dateOfBirthDate.getTime());
 		userDto.DateOfBirth = dateOfBirth;
+		
+		//===============================
+		// Calculate bmi value before updating user entity.
+		double bmi = (double)userDto.Weight / (((double)userDto.Height / 100) * ((double)userDto.Height / 100));
+		bmi = GeneralFunctions.RoundDouble(bmi, 2);
+
+		userDto.Bmi = bmi;
+		//===============================
 
 		int resultId = UserService.InsertUser(userDto);
 

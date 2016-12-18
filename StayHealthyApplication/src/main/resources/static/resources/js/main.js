@@ -1403,22 +1403,22 @@ function graph($re) {
 			element    : 'hero-bar',
 			data       : [
 			{
-				device: 'iPhone',
+				device: 'January',
 				geekbench: 136
 			}, {
-				device: 'iPhone 3G',
+				device: 'February',
 				geekbench: 137
 			}, {
-				device: 'iPhone 3GS',
+				device: 'March',
 				geekbench: 275
 			}, {
-				device: 'iPhone 4',
+				device: 'April',
 				geekbench: 380
 			}, {
-				device: 'iPhone 4S',
+				device: 'May',
 				geekbench: 655
 			}, {
-				device: 'iPhone 5',
+				device: 'June',
 				geekbench: 1571
 			}
 			],

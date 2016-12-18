@@ -225,6 +225,7 @@
 							
 								<div id="divActivityListSuccessMessage" class="successMessage"></div>	
 								<div id="divActivityListErrorMessage" class="errorMessage"></div>	
+									<div id="divTotalCalories" class="successMessage" style="padding-bottom:10px;"></div>	
 									<div class="bs-example" id="divActivityList" style="padding-top: 10px;">
 										
 									</div>
@@ -443,6 +444,7 @@
 					console.log("data.success:" + data.success);
 					if (data.success) {
 						$('#divActivityList').html(data.list);	
+						$('#divTotalCalories').html("Total Calories Burnt: "+ data.totalCalories + " kcal");	
 								
 					} else {
 						console.log("Error occured: data.message:" + data.message);

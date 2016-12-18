@@ -15,7 +15,7 @@ public class FoodApiService {
 		String responseText = "";
 
 		try {
-			String urlString = "http://api.nal.usda.gov/ndb/search/?api_key=&format=json&sort=n&max=50&offset=0";
+			String urlString = "http://api.nal.usda.gov/ndb/search/?api_key=d4VfIQsp6h5AjtssYihrNEvS3OaKFq2pC0ePLE6S&format=json&sort=n&max=50&offset=0";
 			urlString = urlString + "&q=" + Keyword;
 
 			//@eylul: bug here, space character problem.
@@ -57,7 +57,7 @@ public class FoodApiService {
 		String responseText = "";
 
 		try {
-			String urlString = "http://api.nal.usda.gov/ndb/reports/?api_key=&type=b&format=json";
+			String urlString = "http://api.nal.usda.gov/ndb/reports/?api_key=d4VfIQsp6h5AjtssYihrNEvS3OaKFq2pC0ePLE6S&type=b&format=json";
 			urlString = urlString + "&ndbno=" + ndbno;
 
 			URL url = new URL(urlString);

@@ -13,5 +13,6 @@ public class User {
 	public Integer Weight;
 	public Integer Height;
 	public String Notes;
+	public double Bmi;
 	
 }

@@ -36,7 +36,7 @@ $(document).ready(function() {
 								
 								console.log("data.success:" + data.success);
 								if (data.success) {
-									window.location.href = "/home";		
+									window.location.href = "/food-add";		
 								} else {
 									console.log("Error occured: data.message:" + data.message);
 									$("#divLoginMessage").html("<span class='errorMessage'>"+ data.message +"</span>");				
@@ -178,6 +178,33 @@ $(document).ready(function() {
 					}
 					//============Register======================================
 					
+					
+					
+					 $("#inputActivityDuration").keypress(function() {
+						 	return event.charCode >= 48 && event.charCode <= 57;
+					    });
+					
+						
+					 $("#inputAmount").keypress(function() {
+						 	return event.charCode >= 48 && event.charCode <= 57;
+					    });
+					
+					
+						
+					 $("#formRegisterWeight").keypress(function() {
+						 	return event.charCode >= 48 && event.charCode <= 57;
+					    });
+					 $("#formRegisterHeight").keypress(function() {
+						 	return event.charCode >= 48 && event.charCode <= 57;
+					    });
+					 
+					 $("#inputWeight").keypress(function() {
+						 	return event.charCode >= 48 && event.charCode <= 57;
+					    });
+					 
+					 $("#inputHeight").keypress(function() {
+						 	return event.charCode >= 48 && event.charCode <= 57;
+					    });
 				});
 
 
@@ -201,3 +228,5 @@ function logout(){
 					window.location.href = "/login";												
 			});
 };
+
+

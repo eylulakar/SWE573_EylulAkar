@@ -122,15 +122,16 @@
 
 											<nav class="collapse collapsing navbar-collapse">
 												<ul class="nav navbar-nav navbar-center">
-													<li class="parent"><a href="#">Food</a>
+												<li class="parent"><a href="#">Food Activity</a>
 														<ul class="sub">
-															<li><a href="#">My Foods</a></li>
-															<li><a href="#">Add Food</a></li>
+														<li><a href="/food-add">Add Food Activity</a></li>
+															<li><a href="/my-food-activities">My Food Activities</a></li>
 														</ul></li>
-													<li class="parent"><a href="#">Activity</a>
+													<li class="parent"><a href="#">Physical Activity</a>
 														<ul class="sub">
-															<li><a href="/activity-list">My Activities</a></li>
-															<li><a href="/activity-add">Add Activity</a></li>
+															<li><a href="/physical-activity-add">Add Physical Activity</a></li>
+															<li><a href="/my-physical-activities">My Physical Activities</a></li>
+															<li><a href="/physical-activity-list">Physical Activities List</a></li>
 														</ul></li>
 													<li class="parent"><a href="/statistics">Statistics</a></li>
 												</ul>
@@ -162,7 +163,7 @@
 				<div class="container">
 						<ul class="breadcrumb">
 						<li><a href="/home">Home</a></li>
-						<li class="active">Profile</li>
+						<li class="active">My Profile</li>
 					</ul>
 				</div>
 			</div>
@@ -171,12 +172,98 @@
 			<section id="main" class="login-register">
 				<header class="page-header">
 					<div class="container">
-						<h1 class="title">Profile</h1>
+						<h1 class="title">My Profile</h1>
 					</div>
 				</header>
 				<div class="container">
-					<div class="row">My Profile</div>
-				</div>
+					<div class="row">
+						<div class="content col-sm-9 col-md-9">
+							<div id="divLoading" class="loading-content">
+								<img src="/resources/img/loading_big.gif"
+									style="display: block; margin: auto;" width="50px" />
+							</div>		
+							<div id="divBmiContainer">
+							
+							</div>
+								<form class="form-horizontal" role="form" id="formUpdateMyInformations">
+								<div class="form-group">
+								  <label for="inputWeight" class="col-sm-2 control-label">Weight (kg):</label>
+								  <div class="col-sm-10">
+									<input type="text" class="form-control" id="inputWeight"  name="inputWeight" placeholder="Weight" 
+									style="width:200px;"/>											
+								  </div>
+								</div>
+								<div class="form-group">
+								  <label for="inputHeight" class="col-sm-2 control-label">Height (cm):</label>
+								  <div class="col-sm-10">
+									<input type="text" class="form-control" id="inputHeight"  name="inputHeight" placeholder="Height" 
+									style="width:200px;"/>											
+								  </div>
+								</div>
+								<div class="form-group">
+								  <label for="inputDateOfBirth" class="col-sm-2 control-label">Birth Date:</label>
+								  <div class="col-sm-10">
+									<input type="text" class="form-control" id="inputDateOfBirth"  name="inputDateOfBirth" placeholder="Birth Date" style="width:200px;"/>		
+								  </div>
+								</div>
+								<div class="form-group">
+								  <label for="inputHeight" class="col-sm-2 control-label">Gender:</label>
+								  <div class="col-sm-10">
+										<select id="selectGender" class="selectBox" style="width:200px !important;" name="selectGender">											
+										<option value="1">Male</option><option value="0">Female</option>
+										</select>									
+								  </div>
+								</div>
+								
+								<div class="form-group">
+								  <label for="inputNotes" class="col-sm-2 control-label">Notes:</label>
+								  <div class="col-sm-10">
+									<textarea class="form-control" rows="3" id="inputNotes" name="inputNotes" placeholder="Notes"></textarea>	
+								  </div>
+								</div>
+		
+									<div class="form-group">
+											<div class="col-sm-offset-2 col-sm-10">
+												<table>
+													<tr>
+														<td>
+															<button type="submit" class="btn btn-default"
+																id="btnUpdateMyInformations">Update My Informations</button>														
+														</td>
+														<td><div id="divLoadingActivityAdd" class="hide">
+																<img src="/resources/img/loading_big.gif"
+																	style="display: block; margin: auto;" width="40px" />
+															</div></td>
+														<td><div id="divSuccessMessage" class="successMessage" style="padding-left: 10px;"></div>
+														<div id="divErrorMessage" class="errorMessage" style="padding-left: 10px;"></div>
+														</td>
+													</tr>
+												</table>
+		
+		
+		
+											</div>
+										</div>
+					</form>		
+						 </div>
+							
+						
+						<div id="sidebar" class="sidebar col-sm-3 col-md-3">
+										<aside class="widget menu">										
+										  <nav>
+											<ul>
+											 <li style="background-color:#cfdade;">
+												<a href="/profile"><i class="fa fa-male item-icon"></i>My Profile</a>
+											  </li>
+											 <li>
+												<a href="/settings"><i class="fa fa-gears item-icon"></i>My Settings</a>
+											  </li>																				 
+											</ul>
+										  </nav>
+							</aside><!-- .menu-->
+						 </div>
+					 </div>
+				 </div>
 				<!-- .container -->
 			</section>
 			<!-- #main -->
@@ -281,9 +368,7 @@
 	<script src="resources/js/jquery.fancybox.pack.js"></script>
 	<script src="resources/js/isotope.pkgd.min.js"></script>
 	<script src="resources/js/jquery.knob.js"></script>
-	<script src="resources/js/jquery.selectBox.min.js"></script>
-	<script src="resources/js/jquery.royalslider.min.js"></script>
-	<script src="resources/js/jquery.tubular.1.0.js"></script>
+<!--	<script src="resources/js/jquery.selectBox.min.js"></script> -->
 	<script src="resources/js/SmoothScroll.js"></script>
 	<script src="resources/js/country.js"></script>
 	<script src="resources/js/spin.min.js"></script>
@@ -295,33 +380,9 @@
 	<script src="resources/js/pixastic.custom.js"></script>
 	<script src="resources/js/livicons-1.4.min.js"></script>
 	<script src="resources/js/layerslider/greensock.js"></script>
-	<script src="resources/js/layerslider/layerslider.transitions.js"></script>
-	<script
-		src="resources/js/layerslider/layerslider.kreaturamedia.jquery.js"></script>
-	<script src="resources/js/revolution/jquery.themepunch.tools.min.js"></script>
-	<script
-		src="resources/js/revolution/jquery.themepunch.revolution.min.js"></script>
 	<!-- SLIDER REVOLUTION 5.0 EXTENSIONS  
 	(Load Extensions only on Local File Systems !
 	The following part can be removed on Server for On Demand Loading) -->
-	<script
-		src="resources/js/revolution/extensions/revolution.extension.actions.min.js"></script>
-	<script
-		src="resources/js/revolution/extensions/revolution.extension.carousel.min.js"></script>
-	<script
-		src="resources/js/revolution/extensions/revolution.extension.kenburn.min.js"></script>
-	<script
-		src="resources/js/revolution/extensions/revolution.extension.layeranimation.min.js"></script>
-	<script
-		src="resources/js/revolution/extensions/revolution.extension.migration.min.js"></script>
-	<script
-		src="resources/js/revolution/extensions/revolution.extension.navigation.min.js"></script>
-	<script
-		src="resources/js/revolution/extensions/revolution.extension.parallax.min.js"></script>
-	<script
-		src="resources/js/revolution/extensions/revolution.extension.slideanims.min.js"></script>
-	<script
-		src="resources/js/revolution/extensions/revolution.extension.video.min.js"></script>
 	<script src="resources/js/bootstrapValidator.min.js"></script>
 	<script src="resources/js/bootstrap-datepicker.js"></script>
 	<script src="resources/js/jplayer/jquery.jplayer.min.js"></script>
@@ -329,7 +390,114 @@
 	<script src="resources/js/jquery.scrollbar.min.js"></script>
 	<script src="resources/js/main.js"></script>
 	<script type="text/javascript">
-		getUserInfo();
+		  $(document).ready(function () {
+			  
+				getUserInfo();
+				
+				GetUserProfileInfo();
+			
+				$("#inputDateOfBirth").datepicker({ dateFormat: 'dd-mm-yy' })
+		  })
+
+		
+	    function GetUserProfileInfo() {			   
+			  
+		   $("#divBmiContainer").html("");	
+		   
+		   $.ajax({
+				url : "/GetUserProfileInfo",
+				type : "GET",
+				data : {},
+				dataType : "json",
+				success : function(responseData, textStatus, jqXHR) {
+					
+					$("#divBmiContainer").html(responseData.bmiHtml);		
+					console.log("genderrrr:" + responseData.userDto.Gender);
+					$("#selectGender").val("0");
+					$("#inputWeight").val(responseData.userDto.Weight);
+					$("#inputHeight").val(responseData.userDto.Height);
+					$("#inputNotes").val(responseData.userDto.Notes);
+					$("#inputDateOfBirth").val(responseData.userDto.DateOfBirthText);					
+					
+				},
+				error : function(jqXHR, textStatus, errorThrown) {
+					console.log("Error occured: textStatus:"
+							+ textStatus + " jqXHR.responseText:"
+							+ jqXHR.responseText);
+				},
+
+				beforeSend : function(jqXHR, settings) {
+					$("#divLoading").removeClass("hide");
+					$("#divLoading").addClass("show");
+				},
+				complete : function(jqXHR, textStatus) {
+					$("#divLoading").removeClass("show");
+					$("#divLoading").addClass("hide");
+				}
+			})
+
+		}
+		  
+		  
+			$("#btnUpdateMyInformations").click(function(event) {
+
+				$("#divSuccessMessage").html("");
+				$("#divErrorMessage").html("");
+				
+				event.preventDefault();
+				
+				var $form = $("#formUpdateMyInformations");	
+				var postData = $form.serialize();
+				var url = "/UpdateUserInformations";
+				
+				 $.ajax({
+						headers: { 
+					        'Accept': 'application/json',
+					        'Content-Type': 'application/json' 
+					    },			
+			            type: "GET",
+			            url: url,
+			            data: postData,
+			            contentType: "json",
+			            success: function(responseData, textStatus, jqXHR) {
+			            	console.log("dataaa:" + responseData);	
+			            	
+			  
+							if (responseData.success == true) {
+									$("#divSuccessMessage").html(responseData.message);
+									$("#divErrorMessage").html("");
+									
+									GetUserProfileInfo();
+									
+								} else {
+									$("#divSuccessMessage").html("");
+									$("#divErrorMessage").html(responseData.message);									
+								}
+							
+							},
+							error : function(jqXHR, textStatus, errorThrown) {
+								console.log("Error occured: textStatus:"
+										+ textStatus + " jqXHR.responseText:"
+										+ jqXHR.responseText);
+								$("#divErrorMessage").html(
+										"Error occured. Please try again later.");
+								$("#divSuccessMessage").html("");
+							},
+
+							beforeSend : function(jqXHR, settings) {
+								$("#divLoadingActivityAdd").removeClass("hide");
+								$("#divLoadingActivityAdd").addClass("show");
+							},
+
+							complete : function(jqXHR, textStatus) {							
+								$("#divLoadingActivityAdd").removeClass("show");
+								$("#divLoadingActivityAdd").addClass("hide");
+
+							}
+						})
+					});
+		  
+		  
 	</script>
 </body>
 </html>

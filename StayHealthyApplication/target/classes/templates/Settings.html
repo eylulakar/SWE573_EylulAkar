@@ -122,15 +122,16 @@
 
 											<nav class="collapse collapsing navbar-collapse">
 												<ul class="nav navbar-nav navbar-center">
-													<li class="parent"><a href="#">Food</a>
+												<li class="parent"><a href="#">Food Activity</a>
 														<ul class="sub">
-															<li><a href="#">My Foods</a></li>
-															<li><a href="#">Add Food</a></li>
+														<li><a href="/food-add">Add Food Activity</a></li>
+															<li><a href="/my-food-activities">My Food Activities</a></li>
 														</ul></li>
-													<li class="parent"><a href="#">Activity</a>
+													<li class="parent"><a href="#">Physical Activity</a>
 														<ul class="sub">
-															<li><a href="/activity-list">My Activities</a></li>
-															<li><a href="/activity-add">Add Activity</a></li>
+															<li><a href="/physical-activity-add">Add Physical Activity</a></li>
+															<li><a href="/my-physical-activities">My Physical Activities</a></li>
+															<li><a href="/physical-activity-list">Physical Activities List</a></li>
 														</ul></li>
 														<li class="parent"><a href="/statistics">Statistics</a></li>
 												</ul>
@@ -162,7 +163,7 @@
 				<div class="container">
 					<ul class="breadcrumb">
 						<li><a href="/home">Home</a></li>
-						<li class="active">Settings</li>
+						<li class="active">My Settings</li>
 					</ul>
 				</div>
 			</div>
@@ -171,12 +172,35 @@
 			<section id="main" class="login-register">
 				<header class="page-header">
 					<div class="container">
-						<h1 class="title">Settings</h1>
+						<h1 class="title">My Settings</h1>
 					</div>
 				</header>
+				
 				<div class="container">
-					<div class="row">My Settings</div>
-				</div>
+					<div class="row">
+						<div class="content col-sm-9 col-md-9">
+							 
+								
+						</div>
+							
+						
+						<div id="sidebar" class="sidebar col-sm-3 col-md-3">
+										<aside class="widget menu">										
+										  <nav>
+											<ul>
+											 <li>
+												<a href="/profile"><i class="fa fa-male item-icon"></i>My Profile</a>
+											  </li>
+											 <li style="background-color:#cfdade;">
+											 	<a href="/settings"><i class="fa fa-gears item-icon"></i>My Settings</a>
+											  </li>																				 
+											</ul>
+										  </nav>
+							</aside><!-- .menu-->
+						 </div>
+					 </div>
+				 </div>
+				
 				<!-- .container -->
 			</section>
 			<!-- #main -->

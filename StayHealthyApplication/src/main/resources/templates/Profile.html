@@ -122,17 +122,18 @@
 
 											<nav class="collapse collapsing navbar-collapse">
 												<ul class="nav navbar-nav navbar-center">
-													<li class="parent"><a href="#">Food</a>
+												<li class="parent"><a href="#">Food Activity</a>
 														<ul class="sub">
-															<li><a href="#">My Foods</a></li>
-															<li><a href="#">Add Food</a></li>
+														<li><a href="/food-add">Add Food Activity</a></li>
+															<li><a href="/my-food-activities">My Food Activities</a></li>
 														</ul></li>
-													<li class="parent"><a href="#">Activity</a>
+													<li class="parent"><a href="#">Physical Activity</a>
 														<ul class="sub">
-															<li><a href="/activity-list">My Activities</a></li>
-															<li><a href="/activity-add">Add Activity</a></li>
+															<li><a href="/physical-activity-add">Add Physical Activity</a></li>
+															<li><a href="/my-physical-activities">My Physical Activities</a></li>
+															<li><a href="/physical-activity-list">Physical Activities List</a></li>
 														</ul></li>
-													<li class="parent"><a href="#">Report</a></li>
+													<li class="parent"><a href="/statistics">Statistics</a></li>
 												</ul>
 											</nav>
 										</div>
@@ -162,7 +163,7 @@
 				<div class="container">
 						<ul class="breadcrumb">
 						<li><a href="/home">Home</a></li>
-						<li class="active">Profile</li>
+						<li class="active">My Profile</li>
 					</ul>
 				</div>
 			</div>
@@ -171,12 +172,98 @@
 			<section id="main" class="login-register">
 				<header class="page-header">
 					<div class="container">
-						<h1 class="title">Profile</h1>
+						<h1 class="title">My Profile</h1>
 					</div>
 				</header>
 				<div class="container">
-					<div class="row">My Profile</div>
-				</div>
+					<div class="row">
+						<div class="content col-sm-9 col-md-9">
+							<div id="divLoading" class="loading-content">
+								<img src="/resources/img/loading_big.gif"
+									style="display: block; margin: auto;" width="50px" />
+							</div>		
+							<div id="divBmiContainer">
+							
+							</div>
+								<form class="form-horizontal" role="form" id="formUpdateMyInformations">
+								<div class="form-group">
+								  <label for="inputWeight" class="col-sm-2 control-label">Weight (kg):</label>
+								  <div class="col-sm-10">
+									<input type="text" class="form-control" id="inputWeight"  name="inputWeight" placeholder="Weight" 
+									style="width:200px;"/>											
+								  </div>
+								</div>
+								<div class="form-group">
+								  <label for="inputHeight" class="col-sm-2 control-label">Height (cm):</label>
+								  <div class="col-sm-10">
+									<input type="text" class="form-control" id="inputHeight"  name="inputHeight" placeholder="Height" 
+									style="width:200px;"/>											
+								  </div>
+								</div>
+								<div class="form-group">
+								  <label for="inputDateOfBirth" class="col-sm-2 control-label">Birth Date:</label>
+								  <div class="col-sm-10">
+									<input type="text" class="form-control" id="inputDateOfBirth"  name="inputDateOfBirth" placeholder="Birth Date" style="width:200px;"/>		
+								  </div>
+								</div>
+								<div class="form-group">
+								  <label for="inputHeight" class="col-sm-2 control-label">Gender:</label>
+								  <div class="col-sm-10">
+										<select id="selectGender" class="selectBox" style="width:200px !important;" name="selectGender">											
+										<option value="1">Male</option><option value="0">Female</option>
+										</select>									
+								  </div>
+								</div>
+								
+								<div class="form-group">
+								  <label for="inputNotes" class="col-sm-2 control-label">Notes:</label>
+								  <div class="col-sm-10">
+									<textarea class="form-control" rows="3" id="inputNotes" name="inputNotes" placeholder="Notes"></textarea>	
+								  </div>
+								</div>
+		
+									<div class="form-group">
+											<div class="col-sm-offset-2 col-sm-10">
+												<table>
+													<tr>
+														<td>
+															<button type="submit" class="btn btn-default"
+																id="btnUpdateMyInformations">Update My Informations</button>														
+														</td>
+														<td><div id="divLoadingActivityAdd" class="hide">
+																<img src="/resources/img/loading_big.gif"
+																	style="display: block; margin: auto;" width="40px" />
+															</div></td>
+														<td><div id="divSuccessMessage" class="successMessage" style="padding-left: 10px;"></div>
+														<div id="divErrorMessage" class="errorMessage" style="padding-left: 10px;"></div>
+														</td>
+													</tr>
+												</table>
+		
+		
+		
+											</div>
+										</div>
+					</form>		
+						 </div>
+							
+						
+						<div id="sidebar" class="sidebar col-sm-3 col-md-3">
+										<aside class="widget menu">										
+										  <nav>
+											<ul>
+											 <li style="background-color:#cfdade;">
+												<a href="/profile"><i class="fa fa-male item-icon"></i>My Profile</a>
+											  </li>
+											 <li>
+												<a href="/settings"><i class="fa fa-gears item-icon"></i>My Settings</a>
+											  </li>																				 
+											</ul>
+										  </nav>
+							</aside><!-- .menu-->
+						 </div>
+					 </div>
+				 </div>
 				<!-- .container -->
 			</section>
 			<!-- #main -->
@@ -217,20 +304,7 @@
 						</div>
 					</aside>
 					<!-- .newsletter -->
-
-					<aside class="col-xs-12 col-sm-6 col-md-3 widget links">
-						<header>
-							<h3 class="title">My account</h3>
-						</header>
-						<nav>
-							<ul>
-								<li><a href="#">My account</a></li>
-								<li><a href="#">Order History</a></li>
-								<li><a href="#">Wish List</a></li>
-								<li><a href="#">Newsletter</a></li>
-							</ul>
-						</nav>
-					</aside>
+ 
 
 					<aside class="col-xs-12 col-sm-6 col-md-3 widget links">
 						<header>
@@ -252,36 +326,9 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<div class="copyright col-xs-12 col-sm-3 col-md-3">Copyright
-						© ItemBridge Inc., 2013</div>
-
-					<div class="phone col-xs-6 col-sm-3 col-md-3">
-						<div class="footer-icon"></div>
-						<strong class="title">Call Us:</strong> +1 (877) 123-45-67 <br />
-						<strong>or</strong> +1 (777) 123-45-67
-					</div>
-
-					<div class="address col-xs-6 col-sm-3 col-md-3">
-						<div class="footer-icon">
-							<svg x="0" y="0" width="16px" height="16px" viewBox="0 0 16 16"
-								enable-background="new 0 0 16 16" xml:space="preserve">
-			  <g>
-				<g>
-				  <path fill="#c6c6c6"
-									d="M8,16c-0.256,0-0.512-0.098-0.707-0.293C7.077,15.491,2,10.364,2,6c0-3.309,2.691-6,6-6
-					c3.309,0,6,2.691,6,6c0,4.364-5.077,9.491-5.293,9.707C8.512,15.902,8.256,16,8,16z M8,2C5.795,2,4,3.794,4,6
-					c0,2.496,2.459,5.799,4,7.536c1.541-1.737,4-5.04,4-7.536C12.001,3.794,10.206,2,8,2z"></path>
-				</g>
-				<g>
-				  <circle fill="#c6c6c6" cx="8.001" cy="6" r="2"></circle>
-				</g>
-			  </g>
-			</svg>
-						</div>
-						49 Archdale, 2B Charleston 5655, Excel Tower<br /> OPG Rpad,
-						4538FH
-					</div>
-
+					 <div class="copyright col-xs-12 col-sm-3 col-md-3">Copyright
+						© StayHealthy, 2016</div>
+						
 					<div class="col-xs-12 col-sm-3 col-md-3">
 						<a href="#" class="up"> <span
 							class="glyphicon glyphicon-arrow-up"></span>
@@ -321,9 +368,7 @@
 	<script src="resources/js/jquery.fancybox.pack.js"></script>
 	<script src="resources/js/isotope.pkgd.min.js"></script>
 	<script src="resources/js/jquery.knob.js"></script>
-	<script src="resources/js/jquery.selectBox.min.js"></script>
-	<script src="resources/js/jquery.royalslider.min.js"></script>
-	<script src="resources/js/jquery.tubular.1.0.js"></script>
+<!--	<script src="resources/js/jquery.selectBox.min.js"></script> -->
 	<script src="resources/js/SmoothScroll.js"></script>
 	<script src="resources/js/country.js"></script>
 	<script src="resources/js/spin.min.js"></script>
@@ -335,33 +380,9 @@
 	<script src="resources/js/pixastic.custom.js"></script>
 	<script src="resources/js/livicons-1.4.min.js"></script>
 	<script src="resources/js/layerslider/greensock.js"></script>
-	<script src="resources/js/layerslider/layerslider.transitions.js"></script>
-	<script
-		src="resources/js/layerslider/layerslider.kreaturamedia.jquery.js"></script>
-	<script src="resources/js/revolution/jquery.themepunch.tools.min.js"></script>
-	<script
-		src="resources/js/revolution/jquery.themepunch.revolution.min.js"></script>
 	<!-- SLIDER REVOLUTION 5.0 EXTENSIONS  
 	(Load Extensions only on Local File Systems !
 	The following part can be removed on Server for On Demand Loading) -->
-	<script
-		src="resources/js/revolution/extensions/revolution.extension.actions.min.js"></script>
-	<script
-		src="resources/js/revolution/extensions/revolution.extension.carousel.min.js"></script>
-	<script
-		src="resources/js/revolution/extensions/revolution.extension.kenburn.min.js"></script>
-	<script
-		src="resources/js/revolution/extensions/revolution.extension.layeranimation.min.js"></script>
-	<script
-		src="resources/js/revolution/extensions/revolution.extension.migration.min.js"></script>
-	<script
-		src="resources/js/revolution/extensions/revolution.extension.navigation.min.js"></script>
-	<script
-		src="resources/js/revolution/extensions/revolution.extension.parallax.min.js"></script>
-	<script
-		src="resources/js/revolution/extensions/revolution.extension.slideanims.min.js"></script>
-	<script
-		src="resources/js/revolution/extensions/revolution.extension.video.min.js"></script>
 	<script src="resources/js/bootstrapValidator.min.js"></script>
 	<script src="resources/js/bootstrap-datepicker.js"></script>
 	<script src="resources/js/jplayer/jquery.jplayer.min.js"></script>
@@ -369,7 +390,114 @@
 	<script src="resources/js/jquery.scrollbar.min.js"></script>
 	<script src="resources/js/main.js"></script>
 	<script type="text/javascript">
-		getUserInfo();
+		  $(document).ready(function () {
+			  
+				getUserInfo();
+				
+				GetUserProfileInfo();
+			
+				$("#inputDateOfBirth").datepicker({ dateFormat: 'dd-mm-yy' })
+		  })
+
+		
+	    function GetUserProfileInfo() {			   
+			  
+		   $("#divBmiContainer").html("");	
+		   
+		   $.ajax({
+				url : "/GetUserProfileInfo",
+				type : "GET",
+				data : {},
+				dataType : "json",
+				success : function(responseData, textStatus, jqXHR) {
+					
+					$("#divBmiContainer").html(responseData.bmiHtml);		
+					console.log("genderrrr:" + responseData.userDto.Gender);
+					$("#selectGender").val("0");
+					$("#inputWeight").val(responseData.userDto.Weight);
+					$("#inputHeight").val(responseData.userDto.Height);
+					$("#inputNotes").val(responseData.userDto.Notes);
+					$("#inputDateOfBirth").val(responseData.userDto.DateOfBirthText);					
+					
+				},
+				error : function(jqXHR, textStatus, errorThrown) {
+					console.log("Error occured: textStatus:"
+							+ textStatus + " jqXHR.responseText:"
+							+ jqXHR.responseText);
+				},
+
+				beforeSend : function(jqXHR, settings) {
+					$("#divLoading").removeClass("hide");
+					$("#divLoading").addClass("show");
+				},
+				complete : function(jqXHR, textStatus) {
+					$("#divLoading").removeClass("show");
+					$("#divLoading").addClass("hide");
+				}
+			})
+
+		}
+		  
+		  
+			$("#btnUpdateMyInformations").click(function(event) {
+
+				$("#divSuccessMessage").html("");
+				$("#divErrorMessage").html("");
+				
+				event.preventDefault();
+				
+				var $form = $("#formUpdateMyInformations");	
+				var postData = $form.serialize();
+				var url = "/UpdateUserInformations";
+				
+				 $.ajax({
+						headers: { 
+					        'Accept': 'application/json',
+					        'Content-Type': 'application/json' 
+					    },			
+			            type: "GET",
+			            url: url,
+			            data: postData,
+			            contentType: "json",
+			            success: function(responseData, textStatus, jqXHR) {
+			            	console.log("dataaa:" + responseData);	
+			            	
+			  
+							if (responseData.success == true) {
+									$("#divSuccessMessage").html(responseData.message);
+									$("#divErrorMessage").html("");
+									
+									GetUserProfileInfo();
+									
+								} else {
+									$("#divSuccessMessage").html("");
+									$("#divErrorMessage").html(responseData.message);									
+								}
+							
+							},
+							error : function(jqXHR, textStatus, errorThrown) {
+								console.log("Error occured: textStatus:"
+										+ textStatus + " jqXHR.responseText:"
+										+ jqXHR.responseText);
+								$("#divErrorMessage").html(
+										"Error occured. Please try again later.");
+								$("#divSuccessMessage").html("");
+							},
+
+							beforeSend : function(jqXHR, settings) {
+								$("#divLoadingActivityAdd").removeClass("hide");
+								$("#divLoadingActivityAdd").addClass("show");
+							},
+
+							complete : function(jqXHR, textStatus) {							
+								$("#divLoadingActivityAdd").removeClass("show");
+								$("#divLoadingActivityAdd").addClass("hide");
+
+							}
+						})
+					});
+		  
+		  
 	</script>
 </body>
 </html>

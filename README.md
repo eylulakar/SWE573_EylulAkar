@@ -20,6 +20,16 @@ The project is going to be an online web application, which will be developed us
 Mysql is going to be used as Database Management System.
 
 --------------------------------------------------------------------------------------
+<h2>Sample Screens </h2>
+<p>You can click on each image to view original files.</p>
+<p>
+<a href='https://s28.postimg.org/xh6bs2fi5/ss2.jpg' target='_blank'><img  src='https://s28.postimg.org/xh6bs2fi5/ss2.jpg' width='400px' border='0' alt='postimage'/></a>
+<a href='https://s24.postimg.org/j9iqzx285/ss1.jpg' target='_blank'><img  src='https://s24.postimg.org/j9iqzx285/ss1.jpg' width='400px' border='0' alt='postimage'/></a>
+
+<a href='https://s29.postimg.org/h2dbi5fyf/ss3.jpg' target='_blank'><img  src='https://s29.postimg.org/h2dbi5fyf/ss3.jpg' width='400px' border='0' alt='postimage'/></a>
+<a href='https://s30.postimg.org/7g4rqt2nl/ss4.jpg' target='_blank'><img  src='https://s30.postimg.org/7g4rqt2nl/ss4.jpg' width='400px' border='0' alt='postimage'/></a>
+</p>
+--------------------------------------------------------------------------------------
 
 <h2>Documentation Resources</h2> 
 <p>

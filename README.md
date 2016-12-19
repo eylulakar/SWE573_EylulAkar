@@ -36,7 +36,7 @@ Mysql is going to be used as Database Management System.
 <a href="https://github.com/eylulakar/SWE573_EylulAkar/edit/master/README.md#boards" target="_blank">-> Task Management</a> 
 </p>
 <p>
-<a style="text-decoration:underline;" href="https://drive.google.com/file/d/0B-WQaZ9lz7YBQjF0aUp2QUlkMzQ/view" target="_blank">-> Software Requirements Documentation</a></p>
+<a style="text-decoration:underline;" href="https://drive.google.com/open?id=0B-WQaZ9lz7YBcmVZakhzdWlnNHM" target="_blank">-> Software Requirements Documentation</a></p>
 
 <p>
 <a href="https://drive.google.com/open?id=13EeYFLwWLQE-kbuO-JB30CBbLsa61AtkB0lGoNBcJlA" target="_blank">-> Software Design Documentation</a> 

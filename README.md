@@ -51,7 +51,10 @@ Mysql is going to be used as Database Management System.
 <h2>Mockups</h2> 
 <p>Mockups are designed using Balsamiq web application. Each screens menus an buttons have navigations to following screens, if they have any. The top menu is the main navigation source in mockups. Can be visited via link below:</p>
 <p>
-<a href="https://eylulakar.mybalsamiq.com/projects/stayhealthyapp/prototype/mainpage?key=b80036d39bab7a7119ff1e439121d12a9adbe4e2" target="_blank"> -> https://eylulakar.mybalsamiq.com/projects/stayhealthyapp</a>
+Site view with navigation: <a href="https://eylulakar.mybalsamiq.com/projects/stayhealthyapp/prototype/mainpage?key=b80036d39bab7a7119ff1e439121d12a9adbe4e2" target="_blank"> -> https://eylulakar.mybalsamiq.com/projects/stayhealthyapp</a>
+</p>
+<p>
+Project view: <a href="https://eylulakar.mybalsamiq.com/projects/stayhealthyapp/grid" target="_blank"> -> https://eylulakar.mybalsamiq.com/projects/stayhealthyapp/grid</a>
 </p>
 
 --------------------------------------------------------------------------------------
